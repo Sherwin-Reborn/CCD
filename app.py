@@ -43,14 +43,27 @@ def index():
         XGB_pred = XGB_pred[0]
         MLP_pred = MLP_pred[0]
         print(LR_pred)
-        LR_reply = "The Credit Card default is: " + str(LR_pred) + " for Logistic Regression Model"
-        Cart_reply = "The Credit Card default is: " + str(Cart_pred) + " for Decision Tree Cart Model"
-        RF_reply = "The Credit Card default is: " + str(RF_pred) + " for Decision Tree Random Forest Model"
-        XGB_reply = "The Credit Card default is: " + str(XGB_pred) + " for Decision Tree XGBoost Model"
-        MLP_reply = "The Credit Card default is: " + str(MLP_pred) + " for Neural Network MLP Model"
+        LR_reply = "Logistic Regression Model - The Credit Card default is: " + str(LR_pred) 
+        Cart_reply = "Decision Tree Cart Model - The Credit Card default is: " + str(Cart_pred)
+        RF_reply = "Decision Tree Random Forest Model - The Credit Card default is: " + str(RF_pred)
+        XGB_reply = "Decision Tree XGBoost Model- The Credit Card default is: " + str(XGB_pred)
+        MLP_reply = "Neural Network MLP Model- The Credit Card default is: " + str(MLP_pred)
         
         return(render_template("website.html", result = LR_reply, result2=Cart_reply,result3=RF_reply,result4=XGB_reply,result5=MLP_reply))
     else: 
         return(render_template("website.html", result = "Predict Credit Card Default"))
     
+
+
+# In[ ]:
+
+
+if __name__ == "__main__":
+    app.run()
+
+
+# In[ ]:
+
+
+
 
